@@ -10,8 +10,11 @@ function App() {
   
 const addValue = ()=>{
 if(counter>=20) return
-  setCounter(counter+1)
-  console.log("Clicked",counter);
+setCounter((prevCounter)=> prevCounter+1)
+setCounter((prevCounter)=> prevCounter+1)
+setCounter((prevCounter)=> prevCounter+1)
+setCounter((prevCounter)=> prevCounter+1)
+console.log("Clicked",counter);
 }
 
 const removeValue = ()=>{
