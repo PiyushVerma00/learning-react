@@ -1,41 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
-
+import { useState } from 'react'
 function App() {
-  // let counter = 10
- let [counter, setCounter] =   useState(15)
-  
-  
-const addValue = ()=>{
-if(counter>=20) return
-setCounter((prevCounter)=> prevCounter+1)
-setCounter((prevCounter)=> prevCounter+1)
-setCounter((prevCounter)=> prevCounter+1)
-setCounter((prevCounter)=> prevCounter+1)
-console.log("Clicked",counter);
-}
+let [counter,setCounter] = useState(15)
+  // let counter = 15
 
-const removeValue = ()=>{
-if(counter<=0) return
-  setCounter(counter-1)
-}
+  const addValue = ()=>{
+    if(counter<20){
+      setCounter(counter + 1)
+    }
+  }
 
+  const deleteValue = ()=>{
+    if(counter>0){
+      setCounter(counter-1)
+    }
+  }
   return (
-    <>
-      
-      <h1>Vite + React</h1>
-      <h2>Counter Value:{counter}</h2>
+   <>
+   <h1>Chai aur React</h1>
+   <h2> Counter Value: {counter}</h2>
 
-      <button
-      onClick={addValue}
-      >Add Value:{counter}</button>
-      <br />
-      <button
-      onClick={removeValue}>remove Value:{counter}</button>
-   
-    </>
+   <button onClick={addValue}>Add Value :{counter}</button>
+   <br />
+   <button onClick={deleteValue}>Delete Value</button>
+   <p>Value :{counter}</p>
+   </>
   )
 }
 
